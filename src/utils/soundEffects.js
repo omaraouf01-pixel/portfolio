@@ -46,7 +46,7 @@ export const playHoverSound = () => {
 
     osc.start();
     osc.stop(ctx.currentTime + 0.05);
-  } catch (e) {
+  } catch {
     // Ignore audio errors if blocked by browser policy
   }
 };
@@ -72,7 +72,7 @@ export const playClickSound = () => {
 
     osc.start();
     osc.stop(ctx.currentTime + 0.08);
-  } catch (e) {
+  } catch {
     // Ignore
   }
 };
@@ -101,7 +101,7 @@ export const playChime = () => {
       osc.start(now + i * 0.05);
       osc.stop(now + i * 0.05 + 0.25);
     });
-  } catch (e) {
+  } catch {
     // Ignore
   }
 };
@@ -126,7 +126,7 @@ export const playBarcodeBeep = () => {
 
     osc.start();
     osc.stop(ctx.currentTime + 0.06);
-  } catch (e) {
+  } catch {
     // Ignore
   }
 };

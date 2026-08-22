@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { playClickSound } from '../utils/soundEffects';
 
 export default function ResumeModal({ isOpen, onClose }) {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   if (!isOpen) return null;
 

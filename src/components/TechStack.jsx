@@ -1,4 +1,4 @@
-import { Code2, Server, Database, Cloud, Layers, Terminal } from 'lucide-react';
+import { Code2, Server, Database, Layers, Terminal } from 'lucide-react';
 
 export default function TechStack() {
   const techCategories = [
