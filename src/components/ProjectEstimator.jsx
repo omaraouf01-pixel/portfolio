@@ -133,16 +133,15 @@ export default function ProjectEstimator() {
       .map((f) => `• ${f.label}`)
       .join('\n');
 
-    const message = `${t.estimator.waHello}
-${t.estimator.waIntro}
+    const message = `${t.estimator.whatsappGreeting || 'Hello CodeSolve 👋'}
 
-${t.estimator.waType} ${calculation.typeLabel}
-${t.estimator.waFeatures}
-${selectedFeatLabels || t.estimator.waStandard}
-${t.estimator.waTimeline} ${calculation.weeks}
-${t.estimator.waArch} ${calculation.stack}
+${t.estimator.whatsappType || '📌 Type:'} ${calculation.typeLabel}
+${t.estimator.whatsappFeatures || '⚙️ Features:'}
+${selectedFeatLabels || t.estimator.standardFeatures || '• Standard Features'}
+${t.estimator.whatsappTimeline || '⏱️ Timeline:'} ${calculation.weeks}
+${t.estimator.whatsappArch || '🛠️ Architecture:'} ${calculation.stack}
 
-${t.estimator.waClosing}`;
+${t.estimator.whatsappCta || 'Please provide consultation & custom quotation. Thank you!'}`;
 
     return `https://wa.me/213668202110?text=${encodeURIComponent(message)}`;
   };
