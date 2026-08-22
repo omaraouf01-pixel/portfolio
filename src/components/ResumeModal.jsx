@@ -108,21 +108,11 @@ export default function ResumeModal({ isOpen, onClose }) {
             <div className="space-y-4">
               <div className="p-4 rounded-2xl bg-bg-tertiary border border-border-subtle">
                 <div className="flex justify-between items-center mb-1">
-                  <h4 className="font-bold text-text-primary text-sm">{t.resume.posTitle}</h4>
-                  <span className="text-[11px] font-mono text-success font-bold">{t.resume.posStatus}</span>
+                  <h4 className="font-bold text-text-primary text-sm">{t.resume.tawassolTitle}</h4>
+                  <span className="text-[11px] font-mono text-emerald-500 font-bold">{t.resume.tawassolStatus}</span>
                 </div>
                 <p className="text-xs text-text-secondary leading-relaxed">
-                  {t.resume.posDesc}
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-bg-tertiary border border-border-subtle">
-                <div className="flex justify-between items-center mb-1">
-                  <h4 className="font-bold text-text-primary text-sm">{t.resume.erpTitle}</h4>
-                  <span className="text-[11px] font-mono text-accent-start font-bold">{t.resume.erpStatus}</span>
-                </div>
-                <p className="text-xs text-text-secondary leading-relaxed">
-                  {t.resume.erpDesc}
+                  {t.resume.tawassolDesc}
                 </p>
               </div>
             </div>

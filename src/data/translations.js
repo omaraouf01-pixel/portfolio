@@ -223,12 +223,9 @@ export const translations = {
   [Backend]   Node.js, Express, Fastify, Python, REST & GraphQL APIs
   [Database]  PostgreSQL, SQLite (Offline Sync), Firebase, Redis Cache
   [Cloud/Ops] Docker, AWS, Cloudflare, CI/CD, Zero-Trust Security`,
-        projects: `📦 أبرز دراسات الحالة والمشاريع:
-  1. نظام نقاط البيع السحابي (Cloud POS) ➔ مزامنة المخزون والعمل أوفلاين.
-  2. لوحة تحكم إدارية (B2B Analytics) ➔ تحليلات وتقارير فورية للمؤسسات.
-  3. نظام تخطيط الموارد (ERP Cloud) ➔ أتمتة الموارد البشرية والمستودعات.
-  4. منصة تواصل (Tawassol) ➔ منصة تعليمية وتواصلية متقدمة.
-  (يمكنك التمرير لقسم الأعمال لفتح دراسة الحالة لكل مشروع)`,
+        projects: `📦 دراسة الحالة والمشاريع المنفذة:
+  1. منصة تواصل (Tawassol) ➔ منصة تعليمية وتواصلية متكاملة لتبادل المعرفة.
+  (يمكنك التمرير لقسم الأعمال لفتح دراسة الحالة للمشروع ومعاينته حياً)`,
         services: `⚡ ما نقوم ببنائه وهندسته:
   • أنظمة نقاط البيع والمخزون للمتاجر (Online/Offline)
   • منصات الـ ERP وحلول أتمتة سير العمل للمؤسسات
@@ -330,12 +327,9 @@ export const translations = {
       frontendTitle: 'واجهات وتطبيقات الهاتف:',
       backendTitle: 'الأنظمة الخلفية والسحابة:',
       projectsTitle: 'أبرز المنظومات والمشاريع المنجزة',
-      posTitle: 'محرك نقاط البيع وإدارة المخزون السحابي (Cloud POS)',
-      posStatus: 'جاهز للإنتاج',
-      posDesc: 'نظام نقاط بيع فائق السرعة يدعم العمل بدون إنترنت مع مزامنة سحابية فورية، وطباعة فواتير وتكامل مع قارئ الباركود.',
-      erpTitle: 'منصة تحليلات الأعمال وإدارة الموارد (ERP & BI Hub)',
-      erpStatus: 'مستوى مؤسسي',
-      erpDesc: 'منظومة إدارة موارد شاملة تدعم تتبع الفروع والمستودعات المتعددة، وتقارير مالية مؤتمتة وتشفير AES-256.',
+      tawassolTitle: 'منصة تواصل الاجتماعية والتعليمية (Tawassol Platform)',
+      tawassolStatus: 'مشروع حي ونشط',
+      tawassolDesc: 'منصة تواصل أكاديمية واجتماعية متكاملة مبنية بـ React وNext.js وFirebase لتبادل المعرفة والتنسيق التعليمي.',
       eduTitle: 'التعليم الأكاديمي',
       eduDegree: 'علوم الحاسوب وهندسة البرمجيات',
       eduLoc: 'وهران، الجزائر',
@@ -590,12 +584,9 @@ export const translations = {
   [Backend]   Node.js, Express, Fastify, Python, REST & GraphQL APIs
   [Database]  PostgreSQL, SQLite (Offline Sync), Firebase, Redis Cache
   [Cloud/Ops] Docker, AWS, Cloudflare, CI/CD, Sécurité Zero-Trust`,
-        projects: `📦 Études de Cas & Projets Clés :
-  1. Système de Caisse Cloud (POS) ➔ Vente hors-ligne & synchronisation multi-boutiques.
-  2. Tableau de Bord B2B Analytics ➔ Métriques d'entreprise & rapports en temps réel.
-  3. Plateforme ERP Cloud          ➔ Gestion RH, logistique & stocks automatisée.
-  4. Application Tawassol          ➔ Plateforme éducative et sociale nouvelle génération.
-  (Faites défiler jusqu'à la section Projets pour ouvrir l'étude de cas complète)`,
+        projects: `📦 Études de Cas & Projets :
+  1. Application Tawassol ➔ Plateforme éducative et sociale nouvelle génération.
+  (Faites défiler jusqu'à la section Projets pour ouvrir l'étude de cas complète et tester la démo)`,
         services: `⚡ Ce que nous concevons :
   • Systèmes de Caisse POS & Gestion de Stock (En ligne / Hors-ligne)
   • Plateformes ERP d'entreprise & Automatisation des processus
@@ -697,12 +688,9 @@ export const translations = {
       frontendTitle: 'Frontend & Mobile :',
       backendTitle: 'Backend & Cloud :',
       projectsTitle: 'Projets et Réalisations Clés',
-      posTitle: 'Moteur de Caisse POS & Gestion de Stock Cloud',
-      posStatus: 'Prêt pour la production',
-      posDesc: 'Système de caisse ultra-rapide avec fonctionnement hors-ligne (Offline-First), synchronisation cloud automatique et impression de tickets.',
-      erpTitle: 'Plateforme ERP & Hub Analytique B2B',
-      erpStatus: 'Qualité Entreprise',
-      erpDesc: 'Système ERP complet intégrant la gestion multi-boutiques, rapports financiers automatisés et sécurité AES-256.',
+      tawassolTitle: 'Plateforme Sociale & Éducative Tawassol',
+      tawassolStatus: 'Projet en ligne',
+      tawassolDesc: 'Plateforme collaborative et éducative moderne conçue avec React, Next.js et Firebase pour l\'échange académique et le partage de connaissances.',
       eduTitle: 'Formation Académique',
       eduDegree: 'Informatique & Ingénierie Logicielle',
       eduLoc: 'Oran, Algérie',
@@ -957,12 +945,9 @@ export const translations = {
   [Backend]   Node.js, Express, Fastify, Python, REST & GraphQL APIs
   [Database]  PostgreSQL, SQLite (Offline Sync), Firebase, Redis Cache
   [Cloud/Ops] Docker, AWS, Cloudflare, CI/CD, Zero-Trust Security`,
-        projects: `📦 Featured Case Studies:
-  1. Cloud POS System       ➔ Offline-first retail inventory & sales sync.
-  2. B2B Analytics Hub      ➔ Realtime enterprise metrics & BI reporting.
-  3. ERP Management Engine  ➔ Automated HR, warehouse & supply chain.
-  4. Tawassol Social App    ➔ Next-gen educational platform.
-  (Scroll down to the Projects section to open full case study modals)`,
+        projects: `📦 Featured Case Studies & Projects:
+  1. Tawassol Social Platform ➔ Next-gen educational and collaborative platform.
+  (Scroll down to the Projects section to open full case study modal & live demo)`,
         services: `⚡ What We Build:
   • POS & Retail Inventory Systems (Online/Offline)
   • Enterprise ERP Platforms & Workflows
@@ -1064,12 +1049,9 @@ export const translations = {
       frontendTitle: 'Frontend & Mobile:',
       backendTitle: 'Backend & Cloud:',
       projectsTitle: 'Featured Production Projects',
-      posTitle: 'Cloud POS & Retail Inventory Engine',
-      posStatus: 'Production Ready',
-      posDesc: 'High-speed offline-first point of sale system with automatic cloud synchronization, receipt printing, and barcode scanner integration.',
-      erpTitle: 'Enterprise B2B Analytics Hub & ERP',
-      erpStatus: 'Enterprise Grade',
-      erpDesc: 'Comprehensive resource planning platform featuring multi-branch warehouse tracking, automated financial reporting, and AES-256 data protection.',
+      tawassolTitle: 'Tawassol Social & Educational Platform',
+      tawassolStatus: 'Live Project',
+      tawassolDesc: 'Modern collaborative educational platform built with React, Next.js, and Firebase enabling seamless academic networking and knowledge sharing.',
       eduTitle: 'Education',
       eduDegree: 'Computer Science & Software Engineering',
       eduLoc: 'Oran, Algeria',

@@ -41,29 +41,38 @@ export default function PortfolioGrid() {
             {t.portfolio.desc}
           </p>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap justify-center gap-3 mb-14 w-full">
-            {categories.map((cat) => {
-              const label = typeof cat.label === 'object' ? cat.label[language] || cat.label.ar : cat.label;
-              return (
-                <button
-                  key={cat.id}
-                  id={`filter-${cat.id}`}
-                  onClick={() => setActiveFilter(cat.id)}
-                  className={`relative flex justify-center items-center px-6 py-2.5 text-sm font-bold rounded-2xl border transition-all duration-300 ${
-                    activeFilter === cat.id
-                      ? 'bg-gradient-to-r from-accent-start to-accent-end text-white border-transparent shadow-lg shadow-accent-start/30 scale-105'
-                      : 'text-text-secondary border-border-subtle bg-bg-secondary/60 hover:text-text-primary hover:border-accent-start/40 hover:bg-text-primary/5'
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
-          </div>
+          {/* Category Filter Pills (Shown when multiple categories exist) */}
+          {categories.length > 1 && (
+            <div className="flex flex-wrap justify-center gap-3 mb-14 w-full">
+              {categories.map((cat) => {
+                const label = typeof cat.label === 'object' ? cat.label[language] || cat.label.ar : cat.label;
+                return (
+                  <button
+                    key={cat.id}
+                    id={`filter-${cat.id}`}
+                    onClick={() => setActiveFilter(cat.id)}
+                    className={`relative flex justify-center items-center px-6 py-2.5 text-sm font-bold rounded-2xl border transition-all duration-300 ${
+                      activeFilter === cat.id
+                        ? 'bg-gradient-to-r from-accent-start to-accent-end text-white border-transparent shadow-lg shadow-accent-start/30 scale-105'
+                        : 'text-text-secondary border-border-subtle bg-bg-secondary/60 hover:text-text-primary hover:border-accent-start/40 hover:bg-text-primary/5'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          )}
 
-          {/* Projects Bento Grid */}
-          <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full">
+          {/* Projects Grid */}
+          <div
+            ref={ref}
+            className={`w-full ${
+              filteredProjects.length === 1
+                ? 'max-w-2xl mx-auto'
+                : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8'
+            }`}
+          >
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
