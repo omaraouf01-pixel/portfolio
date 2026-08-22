@@ -591,7 +591,8 @@ export const translations = {
   [Cloud/Ops] Docker, AWS, Cloudflare, CI/CD, Sécurité Zero-Trust`,
         projects: `📦 Études de Cas & Projets :
   1. Application Tawassol ➔ Plateforme éducative et sociale nouvelle génération.
-  (Faites défiler jusqu'à la section Projets pour ouvrir l'étude de cas complète et tester la démo)`,
+  2. Debt Manager (CodeSolve POS) ➔ Application desktop Offline-First de gestion des dettes et comptes.
+  (Faites défiler jusqu'à la section Projets pour ouvrir l'étude de cas complète)`,
         services: `⚡ Ce que nous concevons :
   • Systèmes de Caisse POS & Gestion de Stock (En ligne / Hors-ligne)
   • Plateformes ERP d'entreprise & Automatisation des processus
@@ -954,7 +955,8 @@ export const translations = {
   [Cloud/Ops] Docker, AWS, Cloudflare, CI/CD, Zero-Trust Security`,
         projects: `📦 Featured Case Studies & Projects:
   1. Tawassol Social Platform ➔ Next-gen educational and collaborative platform.
-  (Scroll down to the Projects section to open full case study modal & live demo)`,
+  2. Debt Manager (CodeSolve POS) ➔ Offline-First desktop application for commercial debt & balance tracking.
+  (Scroll down to the Projects section to open full case study modal)`,
         services: `⚡ What We Build:
   • POS & Retail Inventory Systems (Online/Offline)
   • Enterprise ERP Platforms & Workflows
