@@ -68,7 +68,7 @@ export default function AudienceSplit() {
             </ul>
 
             <button
-              onClick={() => handleScrollAndFilter('cloud')}
+              onClick={() => handleScrollAndFilter('desktop')}
               className="mt-auto group/btn inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent-start/10 hover:bg-accent-start text-accent-start hover:text-white font-bold text-sm transition-all duration-300 cursor-pointer"
             >
               <span>{t.audience.card1Btn}</span>
