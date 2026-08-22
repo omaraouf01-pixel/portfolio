@@ -89,7 +89,7 @@ export const projects = [
       en: 'Tawassol Collaborative Platform',
     },
     category: 'web',
-    thumbnail: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fm=webp&fit=crop&q=80&w=800',
+    thumbnail: '/images/tawassol.png',
     tags: ['React', 'Next.js', 'Firebase'],
     caseStudy: {
       problem: {
