@@ -109,10 +109,12 @@ export const translations = {
       emptyMsg: 'لا توجد مشاريع في هذا التصنيف حالياً',
       all: 'الكل',
       web: 'تطبيقات الويب',
+      desktop: 'تطبيقات سطح المكتب',
       mobile: 'تطبيقات الهاتف',
       cloud: 'الأنظمة السحابية',
       catCloud: 'نظام سحابي',
       catWeb: 'تطبيق ويب',
+      catDesktop: 'تطبيق سطح مكتب',
       catMobile: 'تطبيق هاتف',
     },
     caseStudy: {
@@ -225,7 +227,7 @@ export const translations = {
   [Cloud/Ops] Docker, AWS, Cloudflare, CI/CD, Zero-Trust Security`,
         projects: `📦 دراسة الحالة والمشاريع المنفذة:
   1. منصة تواصل (Tawassol) ➔ منصة تعليمية وتواصلية متكاملة لتبادل المعرفة.
-  (يمكنك التمرير لقسم الأعمال لفتح دراسة الحالة للمشروع ومعاينته حياً)`,
+  (يمكنك التمرير لقسم الأعمال لفتح دراسة الحالة للمشروع ومعاينته)`,
         services: `⚡ ما نقوم ببنائه وهندسته:
   • أنظمة نقاط البيع والمخزون للمتاجر (Online/Offline)
   • منصات الـ ERP وحلول أتمتة سير العمل للمؤسسات
@@ -470,10 +472,12 @@ export const translations = {
       emptyMsg: 'Aucun projet dans cette catégorie actuellement.',
       all: 'Tous',
       web: 'Applications Web',
+      desktop: 'Applications Desktop',
       mobile: 'Applications Mobiles',
       cloud: 'Systèmes Cloud',
       catCloud: 'Système Cloud',
       catWeb: 'Application Web',
+      catDesktop: 'Application Desktop',
       catMobile: 'Application Mobile',
     },
     caseStudy: {
@@ -831,10 +835,12 @@ export const translations = {
       emptyMsg: 'No projects currently in this category.',
       all: 'All',
       web: 'Web Apps',
+      desktop: 'Desktop Apps',
       mobile: 'Mobile Apps',
       cloud: 'Cloud Systems',
       catCloud: 'Cloud System',
       catWeb: 'Web App',
+      catDesktop: 'Desktop App',
       catMobile: 'Mobile App',
     },
     caseStudy: {

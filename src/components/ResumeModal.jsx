@@ -115,6 +115,18 @@ export default function ResumeModal({ isOpen, onClose }) {
                   {t.resume.tawassolDesc}
                 </p>
               </div>
+
+              {t.resume.debtManagerTitle && (
+                <div className="p-4 rounded-2xl bg-bg-tertiary border border-border-subtle">
+                  <div className="flex justify-between items-center mb-1">
+                    <h4 className="font-bold text-text-primary text-sm">{t.resume.debtManagerTitle}</h4>
+                    <span className="text-[11px] font-mono text-blue-500 font-bold">{t.resume.debtManagerStatus}</span>
+                  </div>
+                  <p className="text-xs text-text-secondary leading-relaxed">
+                    {t.resume.debtManagerDesc}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 

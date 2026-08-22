@@ -83,6 +83,26 @@ I'm here to answer any questions about your software projects, custom architectu
 • **تخصصاتنا:** أنظمة نقاط البيع (POS)، أنظمة تخطيط الموارد (ERP)، منصات الويب السحابية، وتطبيقات الهواتف الذكية.`;
     }
 
+    // Projects & Case Studies
+    if (/(مشاريع|اعمال|اعمالكم|نماذج|معرض|تواصل|ديون|debt|tawassol|portfolio|projets|projects|realisations)/.test(norm)) {
+      if (lang === 'fr') {
+        return `💼 **Nos Principales Réalisations :**
+1. **Application Tawassol :** Plateforme sociale et éducative moderne (React, Next.js, Firebase).
+2. **Debt Manager (CodeSolve POS) :** Système desktop de gestion des dettes et comptes commerciaux (Electron, SQLite, Offline-First avec impression thermique 80mm/A4).
+💡 Vous pouvez explorer les études de cas détaillées directement dans la section **[Nos Réalisations]** sur ce portfolio !`;
+      }
+      if (lang === 'en') {
+        return `💼 **Featured Production Systems :**
+1. **Tawassol Platform:** Next-generation educational and collaborative platform (React, Next.js, Firebase).
+2. **Debt Manager (CodeSolve POS):** Offline-First desktop ERP for commercial debt management, dual receipt printing (80mm/A4), and financial analytics (Electron, SQLite).
+💡 You can explore full technical case studies in the **[Portfolio]** section!`;
+      }
+      return `💼 **أبرز المنظومات والمشاريع المنفذة:**
+1. **منصة تواصل (Tawassol):** منصة تعليمية وتواصلية متكاملة لتبادل المعرفة والتنسيق الأكاديمي (React, Next.js, Firebase).
+2. **نظام إدارة الديون (Debt Manager):** تطبيق سطح مكتب فائق السرعة (Offline-First) لإدارة ديون ومستحقات الزبائن والموردين، طباعة وصولات حرارية 80mm وكشوفات A4، مع لوحة إحصائيات مالية (Electron.js, SQLite).
+💡 يمكنك النقر على أي مشروع في قسم **[معرض الأعمال]** بالأسفل لقراءة دراسة الحالة المفصلة!`;
+    }
+
     // 3. Source Code Ownership
     if (/(كود ملكي|ملكيتي|الملكيه|حقوق الملكيه|سورس كود|source code|الكود المصدري|code source|propriete)/.test(norm)) {
       if (lang === 'fr') {

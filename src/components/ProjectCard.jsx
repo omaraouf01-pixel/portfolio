@@ -7,6 +7,7 @@ export default function ProjectCard({ project, onClick }) {
   const getCategoryLabel = (category) => {
     if (category === 'cloud') return t.portfolio.catCloud;
     if (category === 'web') return t.portfolio.catWeb;
+    if (category === 'desktop') return t.portfolio.catDesktop;
     return t.portfolio.catMobile;
   };
 
