@@ -21,7 +21,10 @@ export default function PortfolioGrid() {
 
   return (
     <>
-      <section id="portfolio" className="relative py-24 bg-bg-primary">
+      <section id="portfolio" className="relative py-28 md:py-36 bg-gradient-to-b from-bg-primary via-indigo-950/20 to-bg-primary overflow-hidden scroll-mt-20">
+        {/* Subtle ambient lighting with purple/indigo glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-accent-mid/15 rounded-full blur-[100px] pointer-events-none" style={{ transform: 'translateZ(0)' }} />
+
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
 
           {/* Badge */}
@@ -37,13 +40,13 @@ export default function PortfolioGrid() {
             </span>
           </h2>
 
-          <p className="max-w-2xl text-center text-text-secondary text-base md:text-lg mb-12">
+          <p className="max-w-2xl text-center text-text-secondary text-base md:text-lg mb-16 font-normal leading-relaxed">
             {t.portfolio.desc}
           </p>
 
           {/* Category Filter Pills (Shown when multiple categories exist) */}
           {categories.length > 1 && (
-            <div className="flex flex-wrap justify-center gap-3 mb-14 w-full">
+            <div className="flex flex-wrap justify-center gap-3 mb-16 w-full">
               {categories.map((cat) => {
                 const label = typeof cat.label === 'object' ? cat.label[language] || cat.label.ar : cat.label;
                 return (
@@ -51,10 +54,10 @@ export default function PortfolioGrid() {
                     key={cat.id}
                     id={`filter-${cat.id}`}
                     onClick={() => setActiveFilter(cat.id)}
-                    className={`relative flex justify-center items-center px-6 py-2.5 text-sm font-bold rounded-2xl border transition-all duration-300 ${
+                    className={`relative flex justify-center items-center px-7 py-3 text-xs sm:text-sm font-bold rounded-2xl border transition-all duration-300 cursor-pointer ${
                       activeFilter === cat.id
                         ? 'bg-gradient-to-r from-accent-start to-accent-end text-white border-transparent shadow-lg shadow-accent-start/30 scale-105'
-                        : 'text-text-secondary border-border-subtle bg-bg-secondary/60 hover:text-text-primary hover:border-accent-start/40 hover:bg-text-primary/5'
+                        : 'text-text-secondary border-border-subtle bg-bg-secondary hover:text-text-primary hover:border-accent-start/40 hover:bg-text-primary/5'
                     }`}
                   >
                     {label}

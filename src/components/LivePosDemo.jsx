@@ -71,9 +71,9 @@ export default function LivePosDemo() {
   };
 
   return (
-    <section id="pos-simulator" className="relative py-24 bg-bg-secondary/40 overflow-hidden">
+    <section id="pos-simulator" className="relative py-28 md:py-36 bg-bg-secondary/40 overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-accent-cyan/10 rounded-full blur-[60px] pointer-events-none" style={{ transform: 'translateZ(0)' }} />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-accent-cyan/15 rounded-full blur-[70px] pointer-events-none" style={{ transform: 'translateZ(0)' }} />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         
@@ -87,12 +87,12 @@ export default function LivePosDemo() {
           {t.pos.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-accent-start">{t.pos.titleHighlight}</span> {t.pos.titleEnd}
         </h2>
 
-        <p className="max-w-2xl text-text-secondary text-base md:text-lg mb-14">
+        <p className="max-w-2xl text-text-secondary text-base md:text-lg mb-16 font-normal leading-relaxed">
           {t.pos.desc}
         </p>
 
         {/* The POS Terminal Window */}
-        <div className="w-full max-w-5xl rounded-3xl overflow-hidden glass-strong border border-border-subtle shadow-2xl shadow-black/20 text-start">
+        <div className="w-full max-w-5xl rounded-3xl overflow-hidden glass-strong border border-border-subtle shadow-2xl shadow-black/25 text-start">
           
           {/* POS Header Bar */}
           <div className="p-4 sm:px-6 bg-bg-tertiary/90 border-b border-border-subtle flex flex-wrap items-center justify-between gap-4">
@@ -107,7 +107,7 @@ export default function LivePosDemo() {
                 playClickSound();
                 setIsOnline(!isOnline);
               }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 border transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 border transition-all cursor-pointer shadow-sm ${
                 isOnline
                   ? 'bg-emerald-500/15 text-emerald-500 border-emerald-500/30'
                   : 'bg-amber-500/15 text-amber-500 border-amber-500/30'
@@ -122,78 +122,78 @@ export default function LivePosDemo() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
             
             {/* Products Grid (7 Cols) */}
-            <div className={`lg:col-span-7 p-6 border-b lg:border-b-0 ${language === 'ar' ? 'lg:border-l' : 'lg:border-r'} border-border-subtle`}>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-black text-text-primary">{t.pos.quickProducts}</span>
-                <span className="text-[11px] text-text-muted">{t.pos.barcodeScan}</span>
+            <div className={`lg:col-span-7 p-6 sm:p-7 border-b lg:border-b-0 ${language === 'ar' ? 'lg:border-l' : 'lg:border-r'} border-border-subtle`}>
+              <div className="flex items-center justify-between mb-5">
+                <span className="text-xs sm:text-sm font-black text-text-primary">{t.pos.quickProducts}</span>
+                <span className="text-xs text-text-secondary font-medium">{t.pos.barcodeScan}</span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
                 {sampleProducts.map((p) => (
                   <button
                     key={p.id}
                     onClick={() => addToCart(p)}
-                    className="group p-4 rounded-2xl bg-bg-secondary border border-border-subtle hover:border-accent-start/60 hover:shadow-lg hover:shadow-accent-start/10 transition-all duration-200 flex flex-col items-center text-center cursor-pointer active:scale-95"
+                    className="group p-4 rounded-2xl bg-bg-secondary border border-border-subtle hover:border-accent-start/60 hover:shadow-xl hover:shadow-accent-start/15 transition-all duration-300 flex flex-col items-center text-center cursor-pointer active:scale-95"
                   >
                     <span className="text-3xl mb-2 transition-transform group-hover:scale-125">{p.icon}</span>
-                    <span className="text-xs font-bold text-text-primary line-clamp-1 mb-1">{p.name}</span>
-                    <span className="text-xs font-black text-accent-start font-mono">{p.price} {t.currency}</span>
+                    <span className="text-xs sm:text-sm font-bold text-text-primary line-clamp-1 mb-1">{p.name}</span>
+                    <span className="text-xs sm:text-sm font-black text-accent-start font-mono">{p.price} {t.currency}</span>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Shopping Cart & Total (5 Cols) */}
-            <div className="lg:col-span-5 p-6 bg-bg-secondary/60 flex flex-col justify-between">
+            <div className="lg:col-span-5 p-6 sm:p-7 bg-bg-secondary/70 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-border-subtle">
-                  <div className="flex items-center gap-2 font-black text-sm text-text-primary">
+                <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-border-subtle">
+                  <div className="flex items-center gap-2 font-black text-sm sm:text-base text-text-primary">
                     <ShoppingCart className="w-4 h-4 text-accent-start" />
                     <span>{t.pos.cartTitle}</span>
                   </div>
-                  <span className="text-xs font-bold text-text-muted">{cart.length} {t.pos.itemsCount}</span>
+                  <span className="text-xs font-bold text-text-secondary">{cart.length} {t.pos.itemsCount}</span>
                 </div>
 
                 {/* Cart Items List */}
                 <div className="space-y-2.5 max-h-56 overflow-y-auto pr-1">
                   {cart.length === 0 ? (
-                    <div className="py-12 text-center text-text-muted text-xs">
+                    <div className="py-12 text-center text-text-muted text-xs sm:text-sm font-medium">
                       {t.pos.emptyCart}
                     </div>
                   ) : (
                     cart.map((item) => (
                       <div
                         key={item.id}
-                        className="p-3 rounded-xl bg-bg-primary/80 border border-border-subtle flex items-center justify-between gap-2 text-xs"
+                        className="p-3 rounded-xl bg-bg-primary/90 border border-border-subtle flex items-center justify-between gap-2 text-xs sm:text-sm"
                       >
-                        <div className="flex items-center gap-2 flex-1">
-                          <span>{item.icon}</span>
-                          <span className="font-bold text-text-primary line-clamp-1">{item.name}</span>
+                        <div className="flex items-center gap-2 flex-1 min-w-0">
+                          <span className="text-base">{item.icon}</span>
+                          <span className="font-bold text-text-primary truncate">{item.name}</span>
                         </div>
 
                         <div className="flex items-center gap-1.5">
                           <button
                             onClick={() => updateQty(item.id, -1)}
-                            className="p-1 rounded-md bg-bg-secondary hover:bg-red-500/20 text-text-secondary hover:text-red-500 cursor-pointer"
+                            className="p-1.5 rounded-lg bg-bg-secondary hover:bg-red-500/20 text-text-secondary hover:text-red-500 cursor-pointer transition-colors"
                           >
                             <Minus className="w-3 h-3" />
                           </button>
-                          <span className="w-5 text-center font-bold font-mono">{item.qty}</span>
+                          <span className="w-5 text-center font-bold font-mono text-text-primary">{item.qty}</span>
                           <button
                             onClick={() => updateQty(item.id, 1)}
-                            className="p-1 rounded-md bg-bg-secondary hover:bg-emerald-500/20 text-text-secondary hover:text-emerald-500 cursor-pointer"
+                            className="p-1.5 rounded-lg bg-bg-secondary hover:bg-emerald-500/20 text-text-secondary hover:text-emerald-500 cursor-pointer transition-colors"
                           >
                             <Plus className="w-3 h-3" />
                           </button>
                         </div>
 
-                        <span className="font-black text-accent-start font-mono min-w-[50px] text-end">
+                        <span className="font-black text-accent-start font-mono min-w-[55px] text-end">
                           {item.price * item.qty} {t.currency}
                         </span>
 
                         <button
                           onClick={() => removeFromCart(item.id)}
-                          className="p-1 text-text-muted hover:text-red-500 cursor-pointer"
+                          className="p-1 text-text-muted hover:text-red-500 cursor-pointer transition-colors"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
@@ -204,16 +204,16 @@ export default function LivePosDemo() {
               </div>
 
               {/* Cart Footer & Checkout */}
-              <div className="pt-4 mt-4 border-t border-border-subtle space-y-3">
-                <div className="flex items-center justify-between text-sm">
+              <div className="pt-5 mt-5 border-t border-border-subtle space-y-4">
+                <div className="flex items-center justify-between text-sm sm:text-base">
                   <span className="text-text-secondary font-bold">{t.pos.total}</span>
-                  <span className="text-2xl font-black text-text-primary font-mono">{totalAmount} {t.currency}</span>
+                  <span className="text-2xl sm:text-3xl font-black text-text-primary font-mono">{totalAmount} {t.currency}</span>
                 </div>
 
                 <button
                   onClick={handleCheckout}
                   disabled={cart.length === 0}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-black text-sm text-white bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-lg shadow-emerald-500/25 disabled:opacity-40 disabled:pointer-events-none transition-all cursor-pointer active:scale-98"
+                  className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-black text-sm sm:text-base text-white bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-xl shadow-emerald-500/25 disabled:opacity-40 disabled:pointer-events-none transition-all cursor-pointer active:scale-98"
                 >
                   <Printer className="w-4 h-4" />
                   <span>{t.pos.checkoutBtn}</span>
@@ -243,17 +243,17 @@ export default function LivePosDemo() {
             {/* Receipt Header */}
             <div className="text-center pb-3 border-b border-dashed border-slate-300">
               <div className="text-base font-black text-slate-900 font-sans">{t.pos.storeName}</div>
-              <div className="text-[10px] text-slate-500 mt-0.5">CodeSolve Cloud POS</div>
-              <div className="text-[10px] text-slate-500">{t.pos.invoiceNo} {receiptModal.number}</div>
-              <div className="text-[10px] text-slate-500">{receiptModal.date}</div>
+              <div className="text-[11px] text-slate-600 font-semibold mt-0.5">CodeSolve Cloud POS</div>
+              <div className="text-[11px] text-slate-600 font-semibold">{t.pos.invoiceNo} {receiptModal.number}</div>
+              <div className="text-[11px] text-slate-600 font-semibold">{receiptModal.date}</div>
             </div>
 
             {/* Receipt Items */}
             <div className="space-y-1.5 py-2 border-b border-dashed border-slate-300">
               {receiptModal.items.map((item, idx) => (
                 <div key={idx} className="flex justify-between items-center text-[11px]">
-                  <span>{item.name} x{item.qty}</span>
-                  <span className="font-bold">{item.price * item.qty} {t.currency}</span>
+                  <span className="font-medium text-slate-800">{item.name} x{item.qty}</span>
+                  <span className="font-bold text-slate-950">{item.price * item.qty} {t.currency}</span>
                 </div>
               ))}
             </div>
@@ -261,16 +261,16 @@ export default function LivePosDemo() {
             {/* Receipt Total */}
             <div className="flex justify-between items-center text-sm font-black pt-1">
               <span>{t.pos.total}</span>
-              <span className="text-emerald-700 text-base">{receiptModal.total} {t.currency}</span>
+              <span className="text-emerald-700 text-lg font-black">{receiptModal.total} {t.currency}</span>
             </div>
 
-            <div className="p-2.5 rounded-xl bg-emerald-50 text-emerald-800 text-[10px] text-center font-bold">
+            <div className="p-3 rounded-xl bg-emerald-50 text-emerald-900 text-xs text-center font-bold">
               {t.pos.invoiceSuccess} {receiptModal.mode}
             </div>
 
             <button
               onClick={() => setReceiptModal(null)}
-              className="w-full py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold text-center hover:bg-slate-800 transition-colors cursor-pointer"
+              className="w-full py-3 rounded-xl bg-slate-900 text-white text-xs font-bold text-center hover:bg-slate-800 transition-colors cursor-pointer shadow-md"
             >
               {t.pos.printDone}
             </button>

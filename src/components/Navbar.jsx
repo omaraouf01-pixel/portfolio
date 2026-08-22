@@ -14,12 +14,12 @@ export default function Navbar({ onOpenResume }) {
 
   const navLinks = [
     { href: '#hero', label: t.nav.hero },
-    { href: '#pos-simulator', label: t.nav.pos },
-    { href: '#estimator', label: t.nav.estimator },
-    { href: '#portfolio', label: t.nav.portfolio },
-    { href: '#services', label: t.nav.services },
-    { href: '#benchmark', label: t.nav.benchmark },
+    { href: '#sectors', label: t.nav.sectors },
+    { href: '#solutions', label: t.nav.solutions },
+    { href: '#portfolio', label: t.nav.projects },
+    { href: '#why-us', label: t.nav.whyUs },
     { href: '#faq', label: t.nav.faq },
+    { href: '#contact', label: t.nav.contact },
   ];
 
   const languages = [
@@ -194,14 +194,14 @@ export default function Navbar({ onOpenResume }) {
           </div>
 
           {/* Mobile Menu & Quick Lang */}
-          <div className="flex items-center gap-1.5 md:hidden">
+          <div className="flex items-center gap-1.5 xl:hidden">
             {/* Mobile Language Cycle */}
             <button
               onClick={() => {
                 const nextLang = language === 'ar' ? 'fr' : language === 'fr' ? 'en' : 'ar';
                 handleSelectLanguage(nextLang);
               }}
-              className="p-2 rounded-xl border border-border-subtle bg-bg-secondary/60 text-xs font-bold flex items-center gap-1"
+              className="p-2 rounded-xl border border-border-subtle bg-bg-secondary/60 text-xs font-bold flex items-center gap-1 cursor-pointer"
             >
               <span>{languages.find((l) => l.code === language)?.flag}</span>
               <span className="uppercase font-mono">{language}</span>
@@ -209,14 +209,16 @@ export default function Navbar({ onOpenResume }) {
 
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-xl text-text-secondary hover:text-text-primary border border-border-subtle bg-bg-secondary/60"
+              className="p-2.5 rounded-xl text-text-secondary hover:text-text-primary border border-border-subtle bg-bg-secondary/60 cursor-pointer"
+              aria-label="Toggle Theme"
             >
               {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
             </button>
 
             <button
-              className="p-2.5 rounded-xl border border-border-subtle bg-bg-secondary/60 text-text-secondary hover:text-text-primary"
+              className="p-2.5 rounded-xl border border-border-subtle bg-bg-secondary/60 text-text-secondary hover:text-text-primary cursor-pointer"
               onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle Navigation Menu"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -227,15 +229,15 @@ export default function Navbar({ onOpenResume }) {
 
       {/* Mobile Menu Drawer */}
       <div 
-        className={`fixed inset-0 bg-black/60 backdrop-blur-md z-40 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 bg-black/60 backdrop-blur-md z-40 transition-opacity duration-300 xl:hidden ${
           mobileOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`} 
         onClick={() => setMobileOpen(false)} 
       />
       
       <div
-        className={`fixed top-0 right-0 h-screen w-72 sm:w-80 bg-bg-primary/95 backdrop-blur-2xl border-l border-border-subtle shadow-2xl z-50 transform transition-transform duration-400 ease-out lg:hidden flex flex-col ${
-          mobileOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 ${language === 'ar' ? 'right-0 border-l' : 'left-0 border-r'} h-screen w-72 sm:w-80 bg-bg-primary/95 backdrop-blur-2xl border-border-subtle shadow-2xl z-50 transform transition-transform duration-300 ease-out xl:hidden flex flex-col ${
+          mobileOpen ? 'translate-x-0' : language === 'ar' ? 'translate-x-full' : '-translate-x-full'
         }`}
       >
         <div className="p-6 flex flex-col h-full overflow-y-auto">

@@ -94,8 +94,11 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="w-full py-24 flex flex-col items-center bg-bg-secondary/40 relative">
-      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+    <section id="faq" className="w-full py-28 md:py-36 flex flex-col items-center bg-bg-secondary/40 relative overflow-hidden scroll-mt-20">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-start/10 rounded-full blur-[90px] pointer-events-none" style={{ transform: 'translateZ(0)' }} />
+
+      <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-start/10 text-accent-start border border-accent-start/20 text-xs font-bold mb-4">
           <HelpCircle className="w-3.5 h-3.5" />
@@ -106,7 +109,7 @@ export default function FAQ() {
           {t.faq.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-start via-accent-mid to-accent-end">{t.faq.titleHighlight}</span>
         </h2>
 
-        <p className="text-base md:text-lg text-text-secondary max-w-2xl mb-14">
+        <p className="text-base md:text-lg text-text-secondary max-w-2xl mb-20 font-normal leading-relaxed">
           {t.faq.desc}
         </p>
 
@@ -116,26 +119,26 @@ export default function FAQ() {
             return (
               <div 
                 key={index} 
-                className={`p-6 rounded-2xl glass-card transition-all duration-300 cursor-pointer border ${
+                className={`p-6 sm:p-7 rounded-3xl glass-card transition-all duration-300 cursor-pointer border ${
                   isOpen 
-                    ? 'border-accent-start/50 bg-bg-secondary shadow-lg shadow-accent-start/10' 
-                    : 'border-border-subtle hover:border-border-subtle/80'
+                    ? 'border-accent-start/60 bg-bg-secondary shadow-xl shadow-accent-start/10' 
+                    : 'border-border-subtle hover:border-accent-start/30 bg-bg-secondary/80'
                 }`}
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg font-bold text-text-primary">
+                  <h3 className="text-lg sm:text-xl font-black text-text-primary">
                     {faq.q}
                   </h3>
-                  <div className={`p-2 rounded-xl bg-text-primary/5 text-text-secondary transition-transform duration-300 ${
-                    isOpen ? 'rotate-180 text-accent-start bg-accent-start/10' : ''
+                  <div className={`p-2.5 rounded-xl bg-text-primary/5 text-text-secondary transition-transform duration-300 shrink-0 ${
+                    isOpen ? 'rotate-180 text-accent-start bg-accent-start/15' : ''
                   }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </div>
 
                 {isOpen && (
-                  <div className="mt-4 pt-4 border-t border-border-subtle/60 text-text-secondary text-sm sm:text-base leading-relaxed animate-fade-in">
+                  <div className="mt-4 pt-4 border-t border-border-subtle text-text-secondary text-sm sm:text-base leading-relaxed animate-fade-in font-normal">
                     {faq.a}
                   </div>
                 )}

@@ -44,7 +44,10 @@ export default function ContactSection() {
   }, [toast.visible]);
 
   return (
-    <section id="contact" className="relative py-24 bg-bg-primary">
+    <section id="contact" className="relative py-28 md:py-36 bg-bg-secondary/40 overflow-hidden scroll-mt-20">
+      {/* Dynamic Ambient Background Glow */}
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-accent-start/10 rounded-full blur-[80px] pointer-events-none" style={{ transform: 'translateZ(0)' }} />
+
       {/* Toast Notification */}
       <div className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 ${
         toast.visible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
@@ -70,7 +73,7 @@ export default function ContactSection() {
           {t.contact.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-start via-accent-mid to-accent-pink">{t.contact.titleHighlight}</span>
         </h2>
 
-        <p className="max-w-2xl text-text-secondary text-base md:text-lg mb-16">
+        <p className="max-w-2xl text-text-secondary text-base md:text-lg mb-20 font-normal leading-relaxed">
           {t.contact.desc}
         </p>
 
@@ -85,25 +88,25 @@ export default function ContactSection() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="WhatsApp Direct" 
-              className="group p-6 rounded-3xl glass-card hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 flex items-start gap-4 border border-border-subtle"
+              className="group p-6 rounded-3xl glass-card hover:border-emerald-500/60 hover:shadow-xl hover:shadow-emerald-500/15 transition-all duration-300 flex items-start gap-4 border border-border-subtle bg-bg-secondary/90"
             >
-              <div className="relative p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 group-hover:scale-110 transition-transform">
+              <div className="relative p-4 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-500 group-hover:scale-110 transition-transform">
                 <MessageCircle className="w-6 h-6" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-bold text-emerald-500 mb-1">{t.contact.whatsappCard}</p>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500">{t.contact.onlineNow}</span>
+                  <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-500 border border-emerald-500/30">{t.contact.onlineNow}</span>
                 </div>
-                <p className="text-text-primary font-black text-base" dir="ltr">+213 668 20 21 10</p>
-                <p className="text-xs text-text-secondary mt-1">{t.contact.fastReply}</p>
+                <p className="text-text-primary font-black text-lg font-mono" dir="ltr">+213 668 20 21 10</p>
+                <p className="text-xs text-text-secondary mt-1 font-medium">{t.contact.fastReply}</p>
               </div>
             </a>
 
             {/* Email Card */}
-            <div className="group p-6 rounded-3xl glass-card hover:border-accent-start/50 transition-all duration-300 flex items-start gap-4 border border-border-subtle">
-              <div className="p-4 rounded-2xl bg-accent-start/10 border border-accent-start/20 text-accent-start group-hover:scale-110 transition-transform">
+            <div className="group p-6 rounded-3xl glass-card hover:border-accent-start/60 transition-all duration-300 flex items-start gap-4 border border-border-subtle bg-bg-secondary/90">
+              <div className="p-4 rounded-2xl bg-accent-start/15 border border-accent-start/30 text-accent-start group-hover:scale-110 transition-transform">
                 <Mail className="w-6 h-6" />
               </div>
               <div className="flex-1">
@@ -121,19 +124,19 @@ export default function ContactSection() {
                 <a href="mailto:codesolve01@gmail.com" className="text-text-primary font-bold text-base hover:text-accent-start transition-colors">
                   codesolve01@gmail.com
                 </a>
-                <p className="text-xs text-text-secondary mt-1">{t.contact.emailSub}</p>
+                <p className="text-xs text-text-secondary mt-1 font-medium">{t.contact.emailSub}</p>
               </div>
             </div>
 
             {/* Location Card */}
-            <div className="p-6 rounded-3xl glass-card flex items-start gap-4 border border-border-subtle">
-              <div className="p-4 rounded-2xl bg-accent-mid/10 border border-accent-mid/20 text-accent-mid">
+            <div className="p-6 rounded-3xl glass-card flex items-start gap-4 border border-border-subtle bg-bg-secondary/90">
+              <div className="p-4 rounded-2xl bg-accent-mid/15 border border-accent-mid/30 text-accent-mid">
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
                 <p className="text-xs font-bold text-text-muted mb-1">{t.contact.locationCard}</p>
                 <p className="text-text-primary font-bold text-base">{t.contact.locationCity}</p>
-                <p className="text-xs text-text-secondary mt-1">{t.contact.locationSub}</p>
+                <p className="text-xs text-text-secondary mt-1 font-medium">{t.contact.locationSub}</p>
               </div>
             </div>
 
@@ -143,7 +146,7 @@ export default function ContactSection() {
           <form 
             onSubmit={handleSubmit} 
             id="contact-form" 
-            className="w-full lg:w-2/3 p-8 sm:p-10 rounded-3xl glass-strong border border-border-subtle shadow-2xl shadow-black/10 space-y-6"
+            className="w-full lg:w-2/3 p-8 sm:p-10 rounded-3xl glass-strong border border-border-subtle shadow-2xl shadow-black/20 space-y-6 bg-bg-secondary/95"
           >
             {/* Honeypot Field */}
             <div className="hidden" aria-hidden="true">
@@ -171,7 +174,7 @@ export default function ContactSection() {
                   onChange={handleInputChange}
                   required
                   minLength={3}
-                  className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-border-subtle text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-start focus:ring-2 focus:ring-accent-start/20 transition-all"
+                  className="w-full px-4 py-3.5 rounded-xl bg-bg-primary/90 border border-border-subtle text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-start focus:ring-2 focus:ring-accent-start/20 transition-all"
                   placeholder={t.contact.namePlaceholder}
                 />
               </div>
@@ -186,7 +189,7 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-border-subtle text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-start focus:ring-2 focus:ring-accent-start/20 transition-all"
+                  className="w-full px-4 py-3.5 rounded-xl bg-bg-primary/90 border border-border-subtle text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-start focus:ring-2 focus:ring-accent-start/20 transition-all"
                   placeholder="name@example.com"
                 />
               </div>
@@ -203,7 +206,7 @@ export default function ContactSection() {
                 onChange={handleInputChange}
                 required
                 minLength={4}
-                className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-border-subtle text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-start focus:ring-2 focus:ring-accent-start/20 transition-all"
+                className="w-full px-4 py-3.5 rounded-xl bg-bg-primary/90 border border-border-subtle text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-start focus:ring-2 focus:ring-accent-start/20 transition-all"
                 placeholder={t.contact.subjectPlaceholder}
               />
             </div>
@@ -219,14 +222,14 @@ export default function ContactSection() {
                 required
                 minLength={10}
                 rows={5}
-                className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-border-subtle text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-start focus:ring-2 focus:ring-accent-start/20 transition-all resize-none"
+                className="w-full px-4 py-3.5 rounded-xl bg-bg-primary/90 border border-border-subtle text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-start focus:ring-2 focus:ring-accent-start/20 transition-all resize-none"
                 placeholder={t.contact.messagePlaceholder}
               />
             </div>
 
             <button
               type="submit"
-              className="group w-full flex justify-center items-center gap-3 px-8 py-4.5 text-base font-bold text-white bg-gradient-to-r from-accent-start via-accent-mid to-accent-end rounded-2xl shadow-xl shadow-accent-start/30 hover:shadow-2xl hover:shadow-accent-start/50 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+              className="group w-full flex justify-center items-center gap-3 px-8 py-5 text-base font-bold text-white bg-gradient-to-r from-accent-start via-accent-mid to-accent-end rounded-2xl shadow-xl shadow-accent-start/30 hover:shadow-2xl hover:shadow-accent-start/50 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
             >
               <Send className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" />
               <span>{t.contact.submitBtn}</span>

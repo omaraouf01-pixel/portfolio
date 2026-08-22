@@ -33,33 +33,33 @@
    ============================================ */
 
 :root {
-  /* الوضع الفاتح العصري (Clean High-End Light) */
+  /* الوضع الفاتح العصري عالي التباين (Clean High-Contrast Light) */
   --color-bg-primary: #F8FAFC;
   --color-bg-secondary: #FFFFFF;
   --color-bg-tertiary: #F1F5F9;
   --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted: #94A3B8;
-  --color-border-subtle: rgba(15, 23, 42, 0.08);
-  --color-border-glow: rgba(59, 130, 246, 0.25);
-  --color-glass-bg: rgba(255, 255, 255, 0.85);
-  --color-glass-strong: rgba(255, 255, 255, 0.95);
-  --color-glass-card: rgba(255, 255, 255, 0.90);
+  --color-text-secondary: #1E293B;
+  --color-text-muted: #475569;
+  --color-border-subtle: rgba(15, 23, 42, 0.10);
+  --color-border-glow: rgba(59, 130, 246, 0.35);
+  --color-glass-bg: rgba(255, 255, 255, 0.88);
+  --color-glass-strong: rgba(255, 255, 255, 0.96);
+  --color-glass-card: rgba(255, 255, 255, 0.92);
 }
 
 .dark {
-  /* الوضع الداكن السيبراني الفاخر (Cyber Deep Dark) */
+  /* الوضع الداكن السيبراني الفاخر عالي التباين (Cyber Deep Dark - High Contrast) */
   --color-bg-primary: #07090E;
   --color-bg-secondary: #0D111A;
   --color-bg-tertiary: #131A29;
   --color-text-primary: #F8FAFC;
-  --color-text-secondary: #94A3B8;
-  --color-text-muted: #64748B;
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
-  --color-border-glow: rgba(99, 102, 241, 0.35);
-  --color-glass-bg: rgba(13, 17, 26, 0.85);
-  --color-glass-strong: rgba(7, 9, 14, 0.95);
-  --color-glass-card: rgba(13, 17, 26, 0.8);
+  --color-text-secondary: #E2E8F0;
+  --color-text-muted: #94A3B8;
+  --color-border-subtle: rgba(255, 255, 255, 0.14);
+  --color-border-glow: rgba(99, 102, 241, 0.45);
+  --color-glass-bg: rgba(13, 17, 26, 0.88);
+  --color-glass-strong: rgba(7, 9, 14, 0.96);
+  --color-glass-card: rgba(13, 17, 26, 0.88);
 }
 
 /* ============================================

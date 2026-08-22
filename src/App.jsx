@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import TrustBar from './components/TrustBar';
 import AudienceSplit from './components/AudienceSplit';
 import LivePosDemo from './components/LivePosDemo';
 import Services from './components/Services';
@@ -33,7 +34,10 @@ export default function App() {
         {/* 2. Hero Section */}
         <HeroSection />
         
-        {/* 2.5 Audience Split */}
+        {/* 2.2 Trust Bar */}
+        <TrustBar />
+
+        {/* 2.5 Audience Split / Sectors */}
         <AudienceSplit />
 
         {/* 3. Live Interactive POS Terminal Simulator */}

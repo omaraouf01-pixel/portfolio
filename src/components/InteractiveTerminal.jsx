@@ -68,7 +68,10 @@ export default function InteractiveTerminal() {
   ];
 
   return (
-    <section id="terminal" className="relative py-24 bg-bg-secondary/30">
+    <section id="terminal" className="relative py-28 md:py-36 bg-bg-secondary/30 overflow-hidden">
+      {/* Background radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-pink/10 rounded-full blur-[90px] pointer-events-none" style={{ transform: 'translateZ(0)' }} />
+
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         
         {/* Badge */}
@@ -84,18 +87,18 @@ export default function InteractiveTerminal() {
           </span>
         </h2>
 
-        <p className="max-w-2xl text-text-secondary text-base md:text-lg mb-12">
+        <p className="max-w-2xl text-text-secondary text-base md:text-lg mb-16 font-normal leading-relaxed">
           {t.terminal.desc}
         </p>
 
         {/* Quick Command Pills */}
-        <div className="flex flex-wrap justify-center items-center gap-2.5 mb-6 max-w-3xl">
-          <span className="text-xs font-bold text-text-muted ml-2">{t.terminal.clickHint}</span>
+        <div className="flex flex-wrap justify-center items-center gap-2.5 mb-8 max-w-3xl">
+          <span className="text-xs font-bold text-text-secondary ml-2">{t.terminal.clickHint}</span>
           {pillButtons.map((item) => (
             <button
               key={item.cmd}
               onClick={() => handleCommand(item.cmd)}
-              className="px-3.5 py-1.5 rounded-xl font-mono text-xs font-bold bg-bg-secondary border border-border-subtle hover:border-accent-start text-text-secondary hover:text-accent-start hover:bg-accent-start/10 transition-all shadow-sm cursor-pointer"
+              className="px-4 py-2 rounded-xl font-mono text-xs sm:text-sm font-bold bg-bg-secondary border border-border-subtle hover:border-accent-start text-text-primary hover:text-accent-start hover:bg-accent-start/10 transition-all shadow-sm cursor-pointer"
             >
               {item.label}
             </button>
