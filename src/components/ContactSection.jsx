@@ -7,6 +7,9 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '', botField: '' });
   const [toast, setToast] = useState({ visible: false, message: '' });
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitCount, setSubmitCount] = useState(0);
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -29,8 +32,25 @@ export default function ContactSection() {
       return;
     }
 
+    // Rate limiting: max 3 submissions per 5 minutes
+    const now = Date.now();
+    if (submitCount >= 3 && now - lastSubmitTime < 5 * 60 * 1000) {
+      setToast({ visible: true, message: t.contact.tooManyRequests || 'Too many requests. Please wait a few minutes.' });
+      return;
+    }
+
+    // Reset counter after 5 minutes
+    if (now - lastSubmitTime >= 5 * 60 * 1000) {
+      setSubmitCount(0);
+    }
+
+    setIsSubmitting(true);
+
     // Simulate API submission
     setTimeout(() => {
+      setSubmitCount((prev) => prev + 1);
+      setLastSubmitTime(Date.now());
+      setIsSubmitting(false);
       setToast({ visible: true, message: t.contact.toastSuccess });
       setFormData({ name: '', email: '', phone: '', subject: '', message: '', botField: '' });
     }, 400);
@@ -229,7 +249,8 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="group w-full flex justify-center items-center gap-3 px-8 py-5 text-base font-bold text-white bg-gradient-to-r from-accent-start via-accent-mid to-accent-end rounded-2xl shadow-xl shadow-accent-start/30 hover:shadow-2xl hover:shadow-accent-start/50 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+              disabled={isSubmitting}
+              className="group w-full flex justify-center items-center gap-3 px-8 py-5 text-base font-bold text-white bg-gradient-to-r from-accent-start via-accent-mid to-accent-end rounded-2xl shadow-xl shadow-accent-start/30 hover:shadow-2xl hover:shadow-accent-start/50 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 disabled:pointer-events-none"
             >
               <Send className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" />
               <span>{t.contact.submitBtn}</span>

@@ -301,9 +301,11 @@ Feel free to ask about:
 • **حجز استشارة مجانية مع المهندس عبر واتساب**`;
   };
 
+  const MAX_MSG_LENGTH = 500;
+
   const handleSendMessage = (textToSend) => {
-    const text = textToSend || inputText;
-    if (!text.trim()) return;
+    const text = (textToSend || inputText).trim().slice(0, MAX_MSG_LENGTH);
+    if (!text) return;
 
     playClickSound();
 
@@ -393,7 +395,12 @@ Feel free to ask about:
                     ? 'bg-accent-start text-white rounded-br-none'
                     : 'bg-bg-secondary text-text-primary border border-border-subtle rounded-bl-none'
                 }`}>
-                  <div dangerouslySetInnerHTML={{ __html: msg.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                  <div dangerouslySetInnerHTML={{ __html: msg.text
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
                   <div className={`text-[9px] mt-1.5 text-end ${msg.sender === 'user' ? 'text-white/70' : 'text-text-muted'}`}>
                     {msg.time}
                   </div>
@@ -443,6 +450,7 @@ Feel free to ask about:
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder={t.chatbot.placeholder}
+              maxLength={500}
               className="flex-1 px-3.5 py-2.5 rounded-xl bg-bg-secondary border border-border-subtle text-text-primary text-xs focus:outline-none focus:border-accent-start focus:ring-1 focus:ring-accent-start transition-all"
             />
             <button
